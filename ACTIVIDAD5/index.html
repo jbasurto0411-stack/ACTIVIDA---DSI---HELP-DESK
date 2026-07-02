@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI Kit - Help Desk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero">
+        <div>
+            <span class="label-system">Design System</span>
+            <h1>UI Kit Help Desk</h1>
+            <p>Biblioteca de componentes reutilizables para el sistema de gestión de incidentes.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="section">
+            <div class="section-title">
+                <h2>Botones</h2>
+                <p>Componentes para acciones principales, secundarias y peligrosas.</p>
+            </div>
+
+            <div class="component-grid">
+                <button class="btn btn-primary">Crear ticket</button>
+                <button class="btn btn-secondary">Guardar cambios</button>
+                <button class="btn btn-danger">Eliminar ticket</button>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                <h2>Formulario</h2>
+                <p>Campos de entrada para registrar un nuevo incidente.</p>
+            </div>
+
+            <form class="form-card">
+                <div class="form-group">
+                    <label for="usuario">Usuario</label>
+                    <input type="text" id="usuario" placeholder="Ingrese el nombre del usuario">
+                </div>
+
+                <div class="form-group">
+                    <label for="asunto">Asunto</label>
+                    <input type="text" id="asunto" placeholder="Ejemplo: Problema con internet">
+                </div>
+
+                <div class="form-group">
+                    <label for="prioridad">Prioridad</label>
+                    <select id="prioridad">
+                        <option>Alta</option>
+                        <option>Media</option>
+                        <option>Baja</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Enviar reporte</button>
+            </form>
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                <h2>Tarjetas</h2>
+                <p>Contenedores visuales para mostrar información de tickets.</p>
+            </div>
+
+            <div class="tickets-grid">
+                <article class="card">
+                    <div class="card-header">
+                        <h3>Ticket #001</h3>
+                        <span class="badge badge-high">Alta</span>
+                    </div>
+                    <p class="card-subtitle">Problema de conexión</p>
+                    <p>El usuario reporta que no puede conectarse a la red institucional desde su equipo.</p>
+
+                    <div class="card-footer">
+                        <button class="btn btn-primary">Ver</button>
+                        <button class="btn btn-secondary">Editar</button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-header">
+                        <h3>Ticket #002</h3>
+                        <span class="badge badge-medium">Media</span>
+                    </div>
+                    <p class="card-subtitle">Error en software</p>
+                    <p>El sistema presenta lentitud al cargar el módulo principal de atención al usuario.</p>
+
+                    <div class="card-footer">
+                        <button class="btn btn-primary">Ver</button>
+                        <button class="btn btn-secondary">Editar</button>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-header">
+                        <h3>Ticket #003</h3>
+                        <span class="badge badge-low">Baja</span>
+                    </div>
+                    <p class="card-subtitle">Solicitud de mantenimiento</p>
+                    <p>Se solicita una revisión preventiva del equipo de escritorio del área administrativa.</p>
+
+                    <div class="card-footer">
+                        <button class="btn btn-primary">Ver</button>
+                        <button class="btn btn-secondary">Editar</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                <h2>Badges de prioridad</h2>
+                <p>Etiquetas visuales para identificar el nivel de prioridad.</p>
+            </div>
+
+            <div class="component-grid">
+                <span class="badge badge-high">Prioridad alta</span>
+                <span class="badge badge-medium">Prioridad media</span>
+                <span class="badge badge-low">Prioridad baja</span>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
