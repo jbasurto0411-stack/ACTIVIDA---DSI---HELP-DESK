@@ -1,5 +1,6 @@
 # No subir el backend en la rama frontend
 backend/
+frontend/
 
 # Dependencias
 node_modules/
