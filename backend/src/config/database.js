@@ -1,15 +1,29 @@
 const { Pool } = require('pg');
 
+if (!process.env.DATABASE_URL) {
+  throw new Error(
+    'La variable de entorno DATABASE_URL no está configurada.',
+  );
+}
+
+const useSSL = process.env.DATABASE_SSL === 'true';
+
 const pool = new Pool({
-    host: process.env.DB_HOST,
-    port: Number(process.env.DB_PORT),
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
+  connectionString: process.env.DATABASE_URL,
+
+  ssl: useSSL
+    ? {
+        rejectUnauthorized: false,
+      }
+    : false,
+});
+
+pool.on('connect', () => {
+  console.log('Conectado correctamente a PostgreSQL de Supabase.');
 });
 
 pool.on('error', (error) => {
-    console.error('Error inesperado en PostgreSQL:', error);
+  console.error('Error inesperado en PostgreSQL:', error);
 });
 
 module.exports = pool;
