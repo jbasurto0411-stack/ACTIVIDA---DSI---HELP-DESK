@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { createTicket } from '../../services/ticketService';
+import { createTicket } from '../../service/ticketService';
 import { sanitizeObject } from '../../utils/sanitize';
 import './IncidentForm.css';
 
@@ -38,16 +38,13 @@ function IncidentForm() {
     const categoriasPermitidas = [
       'Hardware',
       'Software',
-      'Redes',
-      'Acceso',
-      'Otros',
+      'Red',
     ];
 
     const prioridadesPermitidas = [
       'Baja',
       'Media',
       'Alta',
-      'Crítica',
     ];
 
     if (
@@ -219,8 +216,6 @@ function IncidentForm() {
                 <option value="Hardware">Hardware</option>
                 <option value="Software">Software</option>
                 <option value="Red">Red</option>
-                <option value="Acceso">Acceso y credenciales</option>
-                <option value="Otros">Otros</option>
               </select>
             </div>
 
@@ -240,7 +235,6 @@ function IncidentForm() {
                 <option value="Baja">Baja</option>
                 <option value="Media">Media</option>
                 <option value="Alta">Alta</option>
-                <option value="Crítica">Crítica</option>
               </select>
             </div>
           </div>
