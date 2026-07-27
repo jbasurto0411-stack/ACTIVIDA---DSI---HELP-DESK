@@ -1,0 +1,464 @@
+.dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: clamp(1.9rem, 3vw, 2.4rem);
+}
+
+.dashboard-header > div > p:last-child {
+  margin-top: 8px;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.dashboard-eyebrow {
+  margin-bottom: 8px;
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+/* Botón nuevo incidente */
+
+.new-ticket-button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 12px;
+  background-color: var(--primary);
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.22);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.new-ticket-button:hover {
+  background-color: var(--primary-dark);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Tarjetas estadísticas */
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  padding: 22px;
+}
+
+.stat-icon {
+  display: grid;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 14px;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.stat-icon-total {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.stat-icon-open {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+.stat-icon-progress {
+  background-color: #fff7ed;
+  color: #d97706;
+}
+
+.stat-icon-closed {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.stat-card p,
+.stat-card strong,
+.stat-card small {
+  display: block;
+}
+
+.stat-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.stat-card strong {
+  margin: 4px 0;
+  color: var(--text-primary);
+  font-size: 1.8rem;
+}
+
+.stat-card small {
+  color: #94a3b8;
+  font-size: 0.72rem;
+}
+
+/* Contenido inferior */
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.8fr);
+  gap: 24px;
+}
+
+.recent-tickets-card,
+.support-summary {
+  padding: 24px;
+}
+
+/* Encabezados de tarjetas */
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.card-heading h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.card-heading p {
+  margin-top: 5px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.card-heading a {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.card-heading a:hover {
+  text-decoration: underline;
+}
+
+/* Tickets recientes */
+
+.recent-tickets-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.recent-ticket-item {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border);
+}
+
+.recent-ticket-id {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.recent-ticket-information {
+  min-width: 0;
+}
+
+.recent-ticket-information > strong {
+  display: block;
+  overflow: hidden;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recent-ticket-details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.recent-ticket-details > span:first-child {
+  color: var(--text-secondary);
+  font-size: 0.74rem;
+}
+
+/* Insignias */
+
+.priority-badge,
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.priority-badge {
+  padding: 3px 8px;
+}
+
+.status-badge {
+  padding: 7px 10px;
+  white-space: nowrap;
+}
+
+/* Prioridades */
+
+.priority-baja {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+.priority-media {
+  background-color: #fff7ed;
+  color: #d97706;
+}
+
+.priority-alta,
+.priority-critica {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+/* Estados */
+
+.status-abierto {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+/*
+  Debe ser en-progreso porque normalizeClassName()
+  transforma "En Progreso" en "en-progreso".
+*/
+.status-en-progreso {
+  background-color: #fff7ed;
+  color: #d97706;
+}
+
+.status-cerrado {
+  background-color: #f0fdf4;
+  color: #16a34a;
+}
+
+/* Resumen de soporte */
+
+.resolved-summary {
+  padding: 20px;
+  border-radius: 14px;
+  background-color: #f8fafc;
+}
+
+.resolved-summary-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+  font-size: 0.82rem;
+}
+
+.resolved-summary-heading span {
+  color: var(--text-secondary);
+}
+
+.resolved-summary-heading strong {
+  color: var(--text-primary);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 9px;
+  overflow: hidden;
+  border-radius: 999px;
+  background-color: #e2e8f0;
+}
+
+.progress-bar-value {
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--primary);
+  transition: width 0.4s ease;
+}
+
+/* Información general */
+
+.support-information {
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+
+.support-information-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.support-information-item:last-child {
+  border-bottom: none;
+}
+
+.support-information-item span,
+.support-information-item strong {
+  display: block;
+}
+
+.support-information-item span {
+  color: var(--text-secondary);
+  font-size: 0.76rem;
+}
+
+.support-information-item strong {
+  margin-top: 5px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+/* Carga */
+
+.dashboard-loading {
+  display: grid;
+  min-height: 500px;
+  place-items: center;
+  align-content: center;
+  gap: 16px;
+  color: var(--text-secondary);
+}
+
+.loading-spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid #dbeafe;
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: dashboard-spin 0.8s linear infinite;
+}
+
+@keyframes dashboard-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dashboard vacío */
+
+.dashboard-empty {
+  padding: 40px 20px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* Mensajes de error */
+
+.ticket-alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 14px 17px;
+  border-radius: 11px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.ticket-alert-error {
+  border: 1px solid #fecaca;
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+.ticket-alert button {
+  flex-shrink: 0;
+  padding: 7px 12px;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  background-color: transparent;
+  color: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .dashboard-header {
+    flex-direction: column;
+  }
+
+  .new-ticket-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .recent-ticket-item {
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+
+  .recent-ticket-item > .status-badge {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .recent-tickets-card,
+  .support-summary {
+    padding: 18px;
+  }
+}
