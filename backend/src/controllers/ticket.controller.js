@@ -1,4 +1,5 @@
 const pool = require('../config/database');
+const { sanitizeTicket } = require('../utils/sanitize');
 
 const CATEGORIAS_PERMITIDAS = ['Red', 'Hardware', 'Software'];
 const PRIORIDADES_PERMITIDAS = ['Alta', 'Media', 'Baja'];
@@ -108,7 +109,7 @@ const crearTicket = async (req, res) => {
         categoria,
         prioridad,
         estado = 'Abierto'
-    } = req.body;
+    } = sanitizeTicket(req.body);
 
     if (
         typeof titulo !== 'string' ||
@@ -212,7 +213,7 @@ const actualizarTicket = async (req, res) => {
         categoria,
         prioridad,
         estado
-    } = req.body;
+    } = sanitizeTicket(req.body);
 
     if (
         titulo === undefined &&
